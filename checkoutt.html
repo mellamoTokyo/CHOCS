@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHECKOUT</title>
+    <link rel="stylesheet" href="checkoutt.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Playfair+Display:ital,wght@1,800&display=swap" rel="stylesheet">
+          
+
+    <!-- <link rel="stylesheet" href="styleC.css"> -->
+</head>
+<body>
+    <!--navbar-->
+    <nav class="navbar">
+        <h1 class="logo">CH<i style="font-family: 'Playfair Display', serif;">O</i>CS</h1>
+        <div class="toggle-btn">
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="links-container">
+            <li><a href="index.html" class="link">Home</a></li>
+            <li><a href="chocolates.html" class="link">Chocolates</a></li>
+            <li><a href="aboutus.html" class="link">About Us</a></li>
+            <li><a href="#" class="link">Cart</a></li>
+            <li><a href="store.html" class="link">Store Location</a></li>
+        </ul>
+    </nav>
+    
+    <!--mulai isi contentnya dari sini-->
+   
+    <div class="container">
+        <form name="formCh" method="post" onsubmit="return validateForm()">
+            
+              <!-- bagian action nanti mengarah ke home page yaap, sementara taro checkoutfinal -->
+                <h2>Checkout</h2>
+                <h3>Getting your order</h3>
+                <h4>Contact Information</h4>  
+                <div class="form-group">
+                <p>Name:</p><br>
+                <input type="text" name="nama" placeholder="Full Name" class="form-control" required maxlength="40" minlength="3" >
+            </div>
+            <br />
+            <div class="form-group">
+                <p>Phone:</p><br>
+                    <input type="tel" name="angka" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required class="form-control" >
+               <small>example:082-123-1234</small>
+                </div>
+                    <br />
+
+                    <h4>Shipping details</h4> 
+                    <div class="form-group">
+                    <p>Address:</p><br>
+                <input type="text" name="address" placeholder="Address" class="form-control" required maxlength="40" minlength="3">
+            </div>
+            <br />
+            <div class="form-group">
+            <p>Apartment,suite,etc(optional):</p><br>
+                <input type="textarea" name="apartment" placeholder="Apartment" class="form-control" required maxlength="40" minlength="3">
+            </div>
+            <br />
+            <div class="form-group">
+            
+            <div class="form-group">
+            <p>Country:</p><br>
+                <input type="text" name="country" placeholder="Country" class="form-control" required maxlength="40" minlength="3">
+            </div>
+            <br />
+            <p>Province:</p><br>
+                <input type="text" name="prov" placeholder="Province" class="form-control" required maxlength="40" minlength="3">
+            </div>
+            <br />
+            <div class="form-group">
+                <p>Postal Code:</p><br>
+                    <input type="tel" name="post" placeholder="Post Code" pattern="[0-9]{5}" required class="form-control">
+                <small>example:11110</small>
+                </div>   
+            <br />
+
+            <div class="form-group">
+                    <p>Select Delivery Method:</p>
+                    <select name="deliv" class="form-control">
+                        <option value="0">Delivery Method</option>
+                        <option value="1">Enclosed</option>
+                        <option value="2">Open</option>
+                        <option value="3">Full Services</option>
+                        <option value="4">Economy</option>
+                    </select>
+            </div>
+            <br />
+            <h4>Payment</h4>
+            <div class="form-group">
+                <p>Name on Card:</p><br>
+                    <input type="text" name="cardname" placeholder="Card Name" class="form-control" required maxlength="40" minlength="3">
+                </div>
+                <br />
+            <div class="form-group">
+                <p>Card Number:</p><br>
+                    <input type="tel" name="cardno" placeholder="Card Number" pattern="[0-9]{16}" required class="form-control">
+                </div>   
+                <br />
+                <h4>Cart</h4>
+                <img src="img/picture-mask.png">
+                <div class="form-group">
+                    <p>Product Choice:</p>
+                    <select name="choch" class="form-control">
+                        <option value="0">Select Chocolate</option>
+                        <option value="1">Dark Chocolate</option>
+                        <option value="2">Milk Chocolate</option>
+                        <option value="3">White Chocolate</option>
+                        <option value="4">Semisweet Chocolate</option>
+                        <option value="5">Unsweetened Chocolate</option>
+                        <option value="6">Couverture Chocolate</option>
+                        
+                    </select>
+                </div>
+                    <br />
+                    <div class="form-group">
+                        <div class="quantity">
+                            <p>Quantity:</p><br>
+                            <input type="text" name="quantity" placeholder="Quantity"  class="form-control">
+                        </div>
+                    </div>   
+                        <br />
+                        <h4>Add product(optional)</h4>
+                        <div class="form-group">
+                            <div class="addchoc">
+                                <br>
+                            
+                                
+                            <p>Product Choice:</p>
+                            <select name="chochh" class="form-control">
+                                <option value="0">Select Chocolate</option>
+                                <option value="1">Dark Chocolate</option>
+                                <option value="2">Milk Chocolate</option>
+                                <option value="3">White Chocolate</option>
+                                <option value="4">Semisweet Chocolate</option>
+                                <option value="5">Unsweetened Chocolate</option>
+                                <option value="6">Couverture Chocolate</option>
+                                
+                            </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="quantity">
+                                <br>
+                             
+                                <p>Quantity:</p><br>
+                                <input type="text" name="quantityy" placeholder="Quantity"  class="form-control">
+                            </div>
+                        </div>   
+                            <br />
+
+            
+           
+            <div class="button-container">
+                <button type="submit" class="btn btn-primary">Submit</button>    
+            </div>
+            
+            
+            <!-- <a href="#"><h3><u>Submit</u></h3></a> -->
+        </form>
+    </div>
+        <!--footer-->
+    <div class="footer">
+        <p class="footer-logo">CH<i style="font-family: 'Playfair Display', serif;">O</i>CS</p>
+        <hr class="line">
+        <p>&copy;2018-2022 CHOCS | all rights reserved</p>
+    </div>
+    <script src="checkoutt.js"></script>
+</body>
+</html>
